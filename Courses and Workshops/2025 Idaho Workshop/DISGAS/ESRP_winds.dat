@@ -1,0 +1,4 @@
+360300 4816855  2.5        # X,Y station, Zref
+2007 02 24 12 00 CUP      # YYYY MM DD HH MM code
+0      5000   -1.12  -1.14 20.0 22.0  986.55   # Tbeg Tend Vx Vy Tz0 Tzref P
+5000  10000   -1.12  -1.14 20.0 22.0  986.55

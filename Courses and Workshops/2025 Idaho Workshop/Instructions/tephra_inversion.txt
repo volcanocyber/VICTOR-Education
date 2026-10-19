@@ -1,0 +1,20 @@
+1. In Terminal, do:
+
+git clone https://github.com/jimhcyang/tephra_inversion.git
+cd tephra_inversion
+cp ~/shared/Models/tephra2/tephra2_2020 .
+
+2. open config/default_config.py
+
+	a. change the path to the executable to:
+		"executable": "/home/jovyan/tephra_inversion/tephra2_2020",
+
+	b. change the number of iteration for MCMC to 5000:
+		"n_iterations": 5000
+
+Then open the demo.ipynb notebook and run it! 
+
+
+
+
+

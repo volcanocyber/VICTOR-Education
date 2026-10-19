@@ -1,0 +1,15 @@
+EJECT! Workshop — Quick Start
+=============================
+1. Install the libraries:   pip install -r requirements.txt
+2. Launch Jupyter:          jupyter notebook
+3. Run the cells top to bottom (Shift + Enter).
+
+Notebooks:
+  - CSAV_Licancabur_DEM.ipynb    Notebook 0: build the DEM + Licancabur topography (run first).
+  - EJECT_basic.ipynb            Notebook 1: the ballistic model on flat ground.
+  - EJECT_withTopography.ipynb   Notebook 2: real terrain + the QGIS hazard map.
+  - EJECT_probabilistic.ipynb    Notebook 3 (ADVANCED / PROB NO TIME):
+                                 Monte Carlo probabilistic hazard, using distances().
+
+Notebooks 1 and 2 are the student workshop. Notebook 3 is optional/advanced.
+Each notebook works on its own.

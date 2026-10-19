@@ -1,0 +1,6 @@
+python -m ipykernel install --user --name=opera_disp-s1 --display-name "opera_disp-s1"
+
+opera-utils disp-s1-download --output-dir subset-ncs --bbox -155.8 19.3253 -155.4801 19.6855 --frame-id 33039 --start-datetime 2022-12-12
+
+opera-utils disp-s1-reformat --drop-vars connected_component_labels shp_counts persistent_scatterer_mask timeseries_inversion_residuals short_wavelength_displacement --reference-method "BORDER" --output-name MaunaLoa_post2022.nc --reference-border-pixels 3 --input-files subset-ncs/*.nc 
+

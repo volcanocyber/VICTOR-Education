@@ -1,0 +1,64 @@
+DISGAS INPUT FILE
+
+TIME
+  YEAR   = 2007
+  MONTH  = 2
+  DAY    = 24
+  HOUR   = 12
+  MINUTE = 00
+  SIMULATION_INTERVAL_(SEC) = 600
+  RESTART_RUN = NO
+  RESET_TIME  = NO
+
+GRID
+  NX     = 600
+  NY     = 600
+  NZ     = 8
+  Z_LAYERS_(M) = 0. 1. 4. 8. 10. 100. 200. 300.
+  DX_(M) = 30.
+  DY_(M) = 30.
+  X_ORIGIN_(UTM_M) =  347362
+  Y_ORIGIN_(UTM_M) = 4800294
+  UTM_ZONE = 12
+
+PROPERTIES
+  DISPERSION_TYPE = GAS            (GAS/PARTICLES)
+  PARTICLE_DIAMETER = 1e-05         (DIAMETER IN M)
+  PARTICLE_DENSITY =  2500.         (KG/M3)
+  PARTICLE_SHAPE_PARAMETER = 1.     ([0-1])
+  PARTICLE_MODEL_VSET = GANSER      (ARASTOOPOUR/GANSER/WILSON_HUANG)
+
+TOPOGRAPHY
+  EXTRACT_TOPOGRAPHY_FROM_FILE = YES    (YES/NO)
+  Z_ORIGIN_(M) = 2000.0
+  X_SLOPE_(DEG) = 0.0
+  Y_SLOPE_(DEG) = 0.0
+
+METEO
+  WIND_MODEL            = SIMILARITY    (SIMILARITY/DIAGNO)
+  HORIZONTAL_TURB_MODEL = SMAGORINSKY   (CONSTANT/SMAGORINSKY)
+  VERTICAL_TURB_MODEL   = SIMILARITY    (CONSTANT/SIMILARITY)
+  ROUGHNESS_MODEL       = UNIFORM       (UNIFORM/MATRIX)
+  ROUGHNESS_LENGTH      = 0.18          (Roughness length if UNIFORM)
+  DIFF_COEFF_HORIZONTAL = 10           (Only for turbulence model=0)
+  DIFF_COEFF_VERTICAL   = 10           (Only for turbulence model=0)
+
+ FILES                                        (Relative or absolute file paths)
+   TOPOGRAPHY_FILE_PATH   = ESRP.grd  (Only used if topography is extracted from a file)  
+   ROUGHNESS_FILE_PATH    = roughness.grd   (Only used if roughness model is MATRIX)
+   RESTART_FILE_PATH      = restart.dat     (Only used if the run is a restart)
+   SOURCE_FILE_PATH       = ESRP_source.dat
+   WIND_FILE_PATH         = ESRP_winds.dat       (Only used with SIMILARITY wind model)
+   DIAGNO_FILE_PATH       = diagno.out      (Only used with DIAGNO wind model)
+   OUTPUT_DIRECTORY       = outfiles
+
+OUTPUT
+  LOG_VERBOSITY_LEVEL  = 0                 (0/1)
+  OUTPUT_GRD_TYPE      = ASCII             (ASCII/BINARY)
+  OUTPUT_INTERVAL_(SEC) = 30               Number of seconds between prints
+  OUTPUT_U_VELOCITY = YES                  (YES/NO)
+  OUTPUT_V_VELOCITY = YES                  (YES/NO)
+  OUTPUT_W_VELOCITY = NO                  (YES/NO)
+  OUTPUT_CONCENTRATION = YES               (YES/NO)
+  OUTPUT_LAYERS = ALL                      (ALL/List_of_layers)
+  
